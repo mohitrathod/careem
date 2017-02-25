@@ -8,9 +8,10 @@ import java.util.Date;
 public class ChainParties {
 
 
-    enum ChainPartieStatus {
+    public enum ChainPartieStatus {
 
         ERROR,
+        ONGOING,
         SUCCESS
 
     }

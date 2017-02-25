@@ -8,7 +8,7 @@ import java.util.Date;
 public class BlockChain {
 
 
-    enum BlockChainTransection {
+    public enum BlockChainTransection {
 
         ARRIVED,
         IN_TRANSIT,

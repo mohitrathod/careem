@@ -9,10 +9,10 @@ public class TransportRoute {
 
 
 
-    public BigDecimal fromX;
-    public BigDecimal fromY;
-    public BigDecimal toX;
-    public BigDecimal toY;
+    public Double fromX;
+    public Double fromY;
+    public Double toX;
+    public Double toY;
 
 
 

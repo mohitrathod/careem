@@ -28,8 +28,6 @@ public class TransportPackage {
 
     public Date dateDelivered;
 
-    public Order order;
-
     public TransportRoute transportRoute;
 
 }
