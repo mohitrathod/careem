@@ -7,6 +7,7 @@ import java.util.List;
 import com.EaseItUp.careem.model.Customer;
 import com.EaseItUp.careem.model.Order;
 import com.EaseItUp.careem.model.TransportPackage;
+import com.EaseItUp.careem.model.blockChain.BlockChainContainer;
 import com.EaseItUp.careem.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -87,9 +88,18 @@ public class CareemApplication {
 		transportPackage.dateDelivered = new Date();
 		transportPackage.datePickup = new Date();
 		transportPackage.contentType = "MAX_TYPE_2";
-		transportPackage.contentType = "MAX_TYPE_2";
+		transportPackage.name = "phone2";
+		transportPackage.qty = 1;
+		transportPackage.shape = "100 x 20 x 30";
 
-		return null;
+		transportPackages.add(transportPackage);
+		order.transportPackage = transportPackages;
+
+		order.blockChainContainer = new BlockChainContainer();
+
+//		order.blockChainContainer.
+
+		return order;
 
 	}
 

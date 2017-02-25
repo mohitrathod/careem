@@ -1,5 +1,6 @@
 package com.EaseItUp.careem.model;
 
+import com.EaseItUp.careem.model.blockChain.BlockChainContainer;
 import org.springframework.data.annotation.Id;
 
 import java.util.List;
@@ -16,6 +17,8 @@ public class Order {
     public Customer customer;
 
     public List<TransportPackage> transportPackage;
+
+    public BlockChainContainer blockChainContainer;
 
 }
 

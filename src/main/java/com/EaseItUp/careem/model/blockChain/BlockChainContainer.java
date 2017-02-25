@@ -11,8 +11,8 @@ import java.util.Map;
 public class BlockChainContainer {
 
 
-    BlockChain blockChain;
+    public BlockChain blockChain;
 
-    List<ChainParties> chainParties = new ArrayList<>();
+    public List<ChainParties> chainParties = new ArrayList<>();
 
 }
