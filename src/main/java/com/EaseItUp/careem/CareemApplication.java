@@ -86,7 +86,8 @@ public class CareemApplication {
 		TransportPackage transportPackage = new TransportPackage();
 		transportPackage.dateDelivered = new Date();
 		transportPackage.datePickup = new Date();
-		transportPackage.contentType = "";
+		transportPackage.contentType = "MAX_TYPE_2";
+		transportPackage.contentType = "MAX_TYPE_2";
 
 		return null;
 
