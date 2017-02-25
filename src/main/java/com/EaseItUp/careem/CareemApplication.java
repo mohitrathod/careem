@@ -1,17 +1,18 @@
 package com.EaseItUp.careem;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import com.EaseItUp.careem.model.Customer;
+import com.EaseItUp.careem.model.Order;
+import com.EaseItUp.careem.model.TransportPackage;
 import com.EaseItUp.careem.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -57,7 +58,41 @@ public class CareemApplication {
 		
         return customerList;
     }
-	
+
+
+
+	@RequestMapping(value = "/addCustomer", method = RequestMethod.GET)
+	@ResponseBody
+	public Customer addCustomer() {
+
+		Customer c = new Customer("Mohit", "Rathod");
+		return repository.save(c);
+
+	}
+
+
+	@RequestMapping(value = "/addOrder", method = RequestMethod.GET)
+	@ResponseBody
+	public Order addOrder() {
+
+		// find the customer
+		Customer customer = repository.findByFirstName("Mohit") ;
+
+		Order order = new Order();
+		order.customer = customer;
+
+		List<TransportPackage> transportPackages = new ArrayList<>();
+
+		TransportPackage transportPackage = new TransportPackage();
+		transportPackage.dateDelivered = new Date();
+		transportPackage.datePickup = new Date();
+		transportPackage.contentType = "";
+
+		return null;
+
+	}
+
+
 	public static void main(String[] args) {
 		SpringApplication.run(CareemApplication.class, args);
 	}
