@@ -2,6 +2,7 @@ package com.EaseItUp.careem.model;
 
 import com.EaseItUp.careem.model.blockChain.BlockChainContainer;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.aggregation.BooleanOperators;
 
 import java.util.List;
 
@@ -19,6 +20,15 @@ public class Order {
     public List<TransportPackage> transportPackage;
 
     public BlockChainContainer blockChainContainer;
+
+    public OrderStatus orderStatus = OrderStatus.IN_PROCESS;
+
+    public enum OrderStatus {
+
+        IN_PROCESS,
+        COMPLETE
+
+    }
 
 }
 
