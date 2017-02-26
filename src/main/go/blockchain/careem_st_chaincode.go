@@ -1,7 +1,7 @@
 /**
 @author: Sushil Verma
 @version: 1.0
-@date: 26/02/2017
+@date: 25/02/2017
 @Description: Careem Smart Transpotation chaincode
 @Team:	EaseItUp
 @
@@ -21,7 +21,7 @@ type CareemSmartTransportChaincode struct {
 }
 
 type Customer struct {
-	id 			string 		'json:"id"'
+	id 		string 		'json:"id"'
 	firstName	string 		'json:"firstName"'
 	lastName	string 		'json:"lastName"'
 }
@@ -34,22 +34,22 @@ type TransportRoute struct {
 }
 
 type TransportPackage struct {
-    id 					string `json:"id"`
-    name 				string `json:"name"`
-    shape 				string `json:"shape"`
-    weight 				string `json:"weight"`
+    id 				string `json:"id"`
+    name 			string `json:"name"`
+    shape 			string `json:"shape"`
+    weight 			string `json:"weight"`
     contentType 		string `json:"contentType"`
-    qty 				int `json:"qty"`
+    qty 			int `json:"qty"`
     datePickup 			string `json:"datePickup"`
     dateDelivered 		string `json:"dateDelivered"`
     TransportRoute 		TransportRoute `json:"transportRoute"`
 }
 
 type Order struct {
-	id 					string 					`json:"id"`
-	customer 			Customer 				`json:"customer"`
+	id 			string 				`json:"id"`
+	customer 		Customer 			`json:"customer"`
 	transportPackage 	[]TransportPackage 		`json:"transportPackage"`
-	status				string 					`json:"status"`
+	status			string 				`json:"status"`
 }
 
 func (t *CareemSmartTransportChaincode) Init(	stub shim.ChaincodeStubInterface, 
@@ -63,8 +63,8 @@ func (t *CareemSmartTransportChaincode) Init(	stub shim.ChaincodeStubInterface,
 
 // Invoke Careem APIs
 func (t *CareemSmartTransportChaincode) Invoke(	stub shim.ChaincodeStubInterface, 
-									function string, 
-									args []string) ([]byte, error) {
+						function string, 
+						args []string) ([]byte, error) {
 	fmt.Println("Invoke running. Function: " + function)
 	fmt.Printf("args: %s\n", args[1])
 
@@ -80,39 +80,47 @@ func (t *CareemSmartTransportChaincode) Invoke(	stub shim.ChaincodeStubInterface
 
 // Deletes an entity from state
 func (t *CareemSmartTransportChaincode) delete(	stub shim.ChaincodeStubInterface, 
-									args []string) ([]byte, error) {
-
+						args []string) ([]byte, error) {
+	fmt.Println("Entering into function: " + function)
+	//TODO implement delete
+	fmt.Println("Exiting from function: " + function)
 }
 
 // Query callback representing the query of a chaincode
-func (t *CareemSmartTransportChaincode) Query(stub shim.ChaincodeStubInterface, 
-								function string, 
-								args []string) ([]byte, error) {
-
+func (t *CareemSmartTransportChaincode) Query(	stub shim.ChaincodeStubInterface, 
+						function string, 
+						args []string) ([]byte, error) {
+	fmt.Println("Entering into function: " + function)
+	//TODO implement Query
+	fmt.Println("Exiting from function: " + function)
 }
 
 
 //Careem Smart Transport APIs
 
 func (t *CareemSmartTransportChaincode) addCustomer(stub shim.ChaincodeStubInterface, 
-												w string, 
-												s string) ([]byte, error) {
-
+							customerJson string) ([]byte, error) {
+	fmt.Println("Entering into function: " + function)	
+	fmt.Printf("Customer Json object: %v\n", customerJson)
+	//TODO implement addCustomer
+	fmt.Println("Exiting from function: " + function)
 }
 
 func (t *CareemSmartTransportChaincode) addOrder(stub shim.ChaincodeStubInterface, 
-												w string, 
-												s string) ([]byte, error) {
-
+							orderJson string) ([]byte, error) {
+	fmt.Println("Entering into function: " + function)
+	fmt.Printf("Order Json object: %v\n", addOrder)
+	//TODO implement addOrder
+	fmt.Println("Exiting from function: " + function)
 }
 
 func (t *CareemSmartTransportChaincode) updateOrder(stub shim.ChaincodeStubInterface, 
-												w string, 
-												s string) ([]byte, error) {
-
+							orderJson string) ([]byte, error) {
+	fmt.Println("Entering into function: " + function)
+	fmt.Printf("Order Json object: %v\n", addOrder)
+	//TODO implement updateOrder
+	fmt.Println("Exiting from function: " + function)
 }
-
-
 
 func main() {
 	err := shim.Start(new(CareemSmartTransportChaincode))
